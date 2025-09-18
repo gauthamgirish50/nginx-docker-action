@@ -1,0 +1,15 @@
+name: 'Nginx Docker Action'
+description: 'Start an Nginx server in a Docker container'
+inputs:
+  port:
+    description: 'Port to expose'
+    required: false
+    default: '80'
+outputs:
+  nginx_status:
+    description: 'Status of the Nginx server'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.port }}
