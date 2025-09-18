@@ -3,10 +3,10 @@ name: Test Nginx Action
 on: [push]
 
 jobs:
-	test_nginx:
-		runs-on: ubuntu-latest
-		steps:
-			- uses: actions/checkout@v3
-			- uses: gauthamgirish50/nginx-docker-action@main
-				id: nginx
-			- run: echo "Nginx status: ${{ steps.nginx.outputs.nginx_status }}"
+  test_nginx:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gauthamgirish50/nginx-docker-action@v1
+        id: nginx
+      - run: echo "Nginx status: ${{ steps.nginx.outputs.nginx_status }}"
