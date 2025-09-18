@@ -1,6 +1,7 @@
 jobs:
 jobs:
 jobs:
+jobs:
 name: Test Nginx Action
 on: [push]
 
