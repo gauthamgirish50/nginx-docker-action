@@ -1,0 +1,24 @@
+# Nginx Docker Action
+
+This GitHub Action starts an Nginx server in a Docker container.
+
+## Inputs
+- `port` (optional): default is 80
+
+## Outputs
+- `nginx_status`: status of Nginx server
+
+## Example workflow
+
+```yaml
+on: [push]
+jobs:
+  nginx_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: <your-username>/nginx-docker-action@v1
+        id: nginx
+        with:
+          port: 8080
+      - run: echo "Nginx status: ${{ steps.nginx.outputs.nginx_status }}"

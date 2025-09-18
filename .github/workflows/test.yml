@@ -1,3 +1,4 @@
+jobs:
 name: Test Nginx Action
 on: [push]
 
