@@ -13,7 +13,8 @@ sleep 2
 
 # Check if Nginx is running
 if pgrep nginx; then
-	echo "nginx_status=running" >> $GITHUB_OUTPUT
+  echo "nginx_status=running" >> $GITHUB_OUTPUT
 else
-	echo "nginx_status=failed" >> $GITHUB_OUTPUT
+  echo "nginx_status=failed" >> $GITHUB_OUTPUT
 fi
+
