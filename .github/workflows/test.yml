@@ -1,8 +1,5 @@
-jobs:
-jobs:
-jobs:
-jobs:
 name: Test Nginx Action
+
 on: [push]
 
 jobs:
@@ -10,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: gauthamgirish50/nginx-docker-action@v1
+
+      - name: Run Nginx Docker Action
+        uses: gauthamgirish50/nginx-docker-action@v1
         id: nginx
-      - run: echo "Nginx status: ${{ steps.nginx.outputs.nginx_status }}"
+
+      - name: Show Nginx Status
+        run: echo "Nginx status: ${{ steps.nginx.outputs.nginx_status }}"
